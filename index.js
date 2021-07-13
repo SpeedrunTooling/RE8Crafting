@@ -50,6 +50,14 @@ function getData() {
 
 function appendData(data) {
 	//console.log(data);
+
+	//RESET OLD DATA
+	HerbStack.innerHTML = 0;
+	ChemFluidStack.innerHTML = 0;
+	GunPowderStack.innerHTML = 0;
+	RustedScrapStack.innerHTML = 0;
+	MetalScrapStack.innerHTML = 0;
+	
 	var craftItem = data.PlayerInventory.filter((item) => {
 		return item.IsCraftable;
 	});
@@ -64,12 +72,7 @@ function SetCraftItems(item) {
 	let RustedScrapStack = document.getElementById("RustedScrapStack");
 	let MetalScrapStack = document.getElementById("MetalScrapStack");
 
-	//RESET OLD DATA
-	HerbStack.innerHTML = 0;
-	ChemFluidStack.innerHTML = 0;
-	GunPowderStack.innerHTML = 0;
-	RustedScrapStack.innerHTML = 0;
-	MetalScrapStack.innerHTML = 0;
+	
 	
 	switch (item.ItemName) {
 		case "Herb":
